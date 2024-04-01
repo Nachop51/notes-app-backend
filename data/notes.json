@@ -1,0 +1,23 @@
+[
+  {
+    "id": "c7e4e7e9-5e5e-4e4e-9e9e-7e7e7e7e7e7e",
+    "title": "Note 1",
+    "content": "This is the content of note 1.",
+    "createdAt": "2022-01-01T12:34:56Z",
+    "updatedAt": "2022-01-01T12:34:56Z"
+  },
+  {
+    "id": "d8d8d8d8-8d8d-8d8d-8d8d-8d8d8d8d8d8d",
+    "title": "Note 2",
+    "content": "This is the content of note 2.",
+    "createdAt": "2022-01-02T12:34:56Z",
+    "updatedAt": "2022-01-02T12:34:56Z"
+  },
+  {
+    "id": "e9e9e9e9-9e9e-9e9e-9e9e-9e9e9e9e9e9e",
+    "title": "Note 3",
+    "content": "This is the content of note 3.",
+    "createdAt": "2022-01-03T12:34:56Z",
+    "updatedAt": "2022-01-03T12:34:56Z"
+  }
+]
