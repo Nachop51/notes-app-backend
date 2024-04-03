@@ -3,8 +3,8 @@ import z from 'zod'
 export const noteSchema = z.object({
   title: z.string().min(1).max(50),
   content: z.string().min(1).max(500),
-  createdAt: z.coerce.date(),
-  updatedAt: z.coerce.date()
+  createdAt: z.coerce.date().optional().default(() => new Date()),
+  updatedAt: z.coerce.date().optional().default(() => new Date())
 })
 
 export function validateNote (note: unknown) {
@@ -12,5 +12,7 @@ export function validateNote (note: unknown) {
 }
 
 export function validatePartialTodo (object: unknown) {
-  return noteSchema.partial().safeParse(object)
+  return noteSchema.partial(
+    { title: true, content: true }
+  ).safeParse(object)
 }

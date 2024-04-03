@@ -9,7 +9,7 @@ export class NoteController {
     this.notesModel = notesModel
   }
 
-  getNotes = async (req: Request, res: Response) => {
+  getNotes = async (_req: Request, res: Response) => {
     const notes = await this.notesModel.getAll()
 
     return res.json(notes)
@@ -47,7 +47,9 @@ export class NoteController {
       return res.status(400).json({ message: result.error.errors })
     }
 
-    const note = await this.notesModel.updateNote({ id, ...result.data })
+    const updatedAt = new Date()
+
+    const note = await this.notesModel.updateNote({ id, ...result.data, updatedAt })
 
     if (note == null) {
       return res.status(404).json({ message: 'Note not found' })
@@ -65,6 +67,6 @@ export class NoteController {
       return res.status(404).json({ message: 'Note not found' })
     }
 
-    return res.json(note)
+    return res.status(204).send()
   }
 }
